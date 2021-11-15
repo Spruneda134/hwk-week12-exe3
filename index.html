@@ -1,0 +1,181 @@
+<!doctype html>
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>Currency Converter</title>
+
+    <meta name="viewport"
+
+          content="width=device-width, initial-scale=1">
+
+  </head>
+
+<style>
+body {
+background: linear-gradient(to right, green 0%, pink 100%);
+color: white;
+}
+
+.tableclass {
+border: solid darkgreen 5px;
+}
+
+img {
+width: 350px;
+height: auto;
+border-radius: 50px;
+}
+
+a:link, a:visited {
+font-weight: bold;
+text-decoration: none;
+color: white;
+}
+
+</style>
+
+  <body>
+
+<table class="tableclass">
+<tr><td>
+<form name="theform">
+<table>
+<tr><td>
+<h1>Currency Converter</h1>
+<p><strong>Convert USA Dollars to other currencies.</strong></p>
+</td>
+</tr>
+
+<tr>
+<td rowspan="10"><img src="coins.jpg" alt="picture of a letter grade"></td>
+<td style="float: right"><strong>Enter USA dollar amount:</strong></td>
+<td><input name="dollarFmInput" size="10"></td>
+</tr>
+
+<tr>
+<td style="float: right"><strong>Euro:</strong></td>
+<td style="background-color: white; color: black" id="euroFmOutput"></td>
+</tr>
+
+<tr>
+<td style="float: right"><strong>Pound Sterling:</strong></td>
+<td style="background-color: white; color: black" id="poundFmOutput"></td>
+</tr>
+
+<tr>
+<td style="float: right"><strong>Australian Dollar:</strong></td>
+<td style="background-color: white; color: black" id="australianFmOutput"></td>
+</tr>
+
+<tr>
+<td style="float: right"><strong>Mexican Pesos</strong></td>
+<td style="background-color: white; color: black" id="pesosFmOutput"></td>
+</tr>
+
+<tr>
+<td style="float: right"><strong>Canadian Dollar:</strong></td>
+<td style="background-color: white; color: black" id="canadianFmOutput"></td>
+</tr>
+
+<tr>
+<td style="float: right"><strong>Turkish Lira:</strong></td>
+<td style="background-color: white; color: black" id="liraFmOutput"></td>
+</tr>
+
+<tr>
+<td style="float: right"><strong>Japanese Yen:</strong></td>
+<td style="background-color: white; color: black" id="yenFmOutput"></td>
+</tr>
+
+<tr>
+<td style="float: right"><strong>Swiss Franc:</strong></td>
+<td style="background-color: white; color: black" id="francFmOutput"></td>
+</tr>
+
+<tr>
+<td colspan="2">
+	<input type="button" name="calc" value="Calculate" onclick="calculate();">
+	<input type="button" name="clear" value="Clear" onclick="clearinfo();">
+</tr>
+
+</table>
+</form>
+</td></tr></table>
+
+
+<script>
+document.theform.dollarFmInput.focus();
+
+function calculate(){
+const euro_c = .84;
+const pound_c = .77;
+const australian_c = 1.40;
+const pesos_c = 20.86;
+const canadian_c = 1.31;
+const lira_c = 7.96;
+const yen_c = 104.76;
+const franc_c = .90;
+
+var dollar;
+
+var euro;
+var pound;
+var australian;
+var pesos;
+var canadian
+var lira;
+var yen;
+var franc;
+
+
+dollar = parseFloat(document.theform.dollarFmInput.value);
+
+
+euro = parseFloat(dollar * euro_c);
+pound = parseFloat(dollar * pound_c);
+australian = parseFloat(dollar * australian_c);
+pesos = parseFloat(dollar * pesos_c);
+canadian = parseFloat(dollar * canadian_c);
+lira = parseFloat(dollar * lira_c);
+yen = parseFloat(dollar * yen_c);
+franc = parseFloat(dollar * franc_c);
+
+
+
+document.getElementById("euroFmOutput").innerHTML = "$ " + euro.toFixed(2);
+document.getElementById("poundFmOutput").innerHTML = "$ " + pound.toFixed(2);
+document.getElementById("australianFmOutput").innerHTML = "$ " + australian.toFixed(2);
+document.getElementById("pesosFmOutput").innerHTML = "$ " + pesos.toFixed(2);
+document.getElementById("canadianFmOutput").innerHTML = "$ " + canadian.toFixed(2);
+document.getElementById("liraFmOutput").innerHTML = "$ " + lira.toFixed(2);
+document.getElementById("yenFmOutput").innerHTML = "$ " + yen.toFixed(2);
+document.getElementById("francFmOutput").innerHTML = "$ " + franc.toFixed(2);
+}
+
+function clearinfo() {
+document.theform.dollarFmInput.value = " ";
+
+document.getElementById("euroFmOutput").innerHTML = " ";
+document.getElementById("poundFmOutput").innerHTML = " ";
+document.getElementById("australianFmOutput").innerHTML = " ";
+document.getElementById("pesosFmOutput").innerHTML = " ";
+document.getElementById("canadianFmOutput").innerHTML = " ";
+document.getElementById("liraFmOutput").innerHTML = " ";
+document.getElementById("yenFmOutput").innerHTML = " ";
+document.getElementById("francFmOutput").innerHTML = " ";
+
+document.theform.dollarFmInput.focus();
+}
+
+
+</script>
+
+<br> <a href="http://csnet.southtexascollege.edu/localuser/spruned5/index.html">Go Back to HomePage</a>
+	<p><strong>Salvador Pruneda</strong></p> 
+  </body>
+
+</html>
